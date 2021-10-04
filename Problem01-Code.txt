@@ -1,0 +1,5 @@
+# This code creates a file which lists the unique number of years worked with the associated gender
+
+cat wages.csv | grep -v "gender" | cut -d , -f 1,2 | sed 's/,/ /g'| sort -V | uniq > Problem01-uniqueGenderandyearsExperience.txt
+
+

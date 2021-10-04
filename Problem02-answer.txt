@@ -1,0 +1,6 @@
+Information on Highest Earner
+male 5 39.808917197
+Information on Lowest Earner
+female 9 0.07655561
+Number of Females in Top Ten Earners
+      2 female
