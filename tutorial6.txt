@@ -1,0 +1,24 @@
+#question 1
+#creating file with unique number of years worked and gender
+
+cat wages.csv | grep -v "gender" |cut -d , -f 1,2 | sed 's/,/g' | sort -v |uniq > uniquewages.txt
+
+#question 2
+
+echo "Information on Highest Earner"
+cat "$1" | grep -v "gender | cut -d , -f 1,2,4 |sed 's/,/g' | sort -Vk3 | tail -n 1
+
+echo "Information of Lowest Earner"
+cat "$1" | grep -v "gender | cut -d , -f 1,2,4 |sed 's/,/g' | sort -Vk3 | head -n 1
+
+echo "Number of Females in Top Ten Earners"
+cat "$1" | grep -v "gender | cut -d , -f 1,2,4 |sed 's/,/g' | sort -Vk3 | tail -n 10 | cut -d " " -f 1 | sort| uniq -c | grep "female"
+
+#question 3
+
+val1=$(cat "$1" | grep -v "gender" | cut -d , -f 3,4 | sort -n | sed 's/,/ /g' | grep "12" | head -n 1 | cut -d " " -f 2)
+val2=$(cat "$1" | grep -v "gender" | cut -d , -f 3,4 | sort -n | sed 's/,/ /g' | grep "16" | head -n 1 | cut -d " " -f 2)
+dif="$val2-$val1"
+echo "The effect of graduating college on minnimum wage is the difference of:"
+echo "$val2 $val1" |awk '{prin $1-$2}'
+
