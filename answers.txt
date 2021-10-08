@@ -1,1 +1,6 @@
-test
+#question 1
+cat wages.csv|cut -d , -f 1,2|grep -v "gender"|sort -k1,1 -k2,2n -t ,|uniq>gye.csv
+
+
+#question 2
+cat wages.csv|cut -d , -f1,2,4|grep -v "gender"|sort -k3 -t ,|uniq>TE.csv
