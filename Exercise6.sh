@@ -1,6 +1,6 @@
 #1st Question
-cat wages.csv | cut -d , -f 1,2 | grep -w "female" | sort -k 2  -n -t ,| tr "," " " > 1st_Question.txt
-cat wages.csv | cut -d , -f 1,2 | grep -w "male" | sort -k 2  -n -t ,| tr "," " " >> 1st_Question.txt
+cat wages.csv | cut -d , -f 1,2 | grep -w "female" | sort -k 2  -n -t ,| tr "," " " | uniq > 1st_Question.txt
+cat wages.csv | cut -d , -f 1,2 | grep -w "male" | sort -k 2  -n -t ,| tr "," " " | uniq >> 1st_Question.txt
 
 #2rd Question
 echo "the gender, yearsExprience, and wage for the highest earner:"
